@@ -8,16 +8,16 @@
     "nx.json": "*"
   },
   "projects": {
-    "ng-runtime-routes": {
-      "tags": []
-    },
-    "ng-runtime-routes-e2e": {
-      "tags": []
-    },
     "api": {
       "tags": []
     },
     "api-interface": {
+      "tags": []
+    },
+    "ex-app": {
+      "tags": []
+    },
+    "ex-app-e2e": {
       "tags": []
     }
   }

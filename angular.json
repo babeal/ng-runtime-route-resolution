@@ -3,125 +3,6 @@
   "version": 1,
   "newProjectRoot": "",
   "projects": {
-    "ng-runtime-routes": {
-      "root": "apps/ng-runtime-routes/",
-      "sourceRoot": "apps/ng-runtime-routes/src",
-      "projectType": "application",
-      "prefix": "nge",
-      "schematics": {
-        "@nrwl/schematics:component": {
-          "style": "scss"
-        }
-      },
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/ng-runtime-routes",
-            "index": "apps/ng-runtime-routes/src/index.html",
-            "main": "apps/ng-runtime-routes/src/main.ts",
-            "polyfills": "apps/ng-runtime-routes/src/polyfills.ts",
-            "tsConfig": "apps/ng-runtime-routes/tsconfig.app.json",
-            "assets": [
-              "apps/ng-runtime-routes/src/favicon.ico",
-              "apps/ng-runtime-routes/src/assets"
-            ],
-            "styles": ["apps/ng-runtime-routes/src/styles.scss"],
-            "scripts": [],
-            "es5BrowserSupport": true
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/ng-runtime-routes/src/environments/environment.ts",
-                  "with": "apps/ng-runtime-routes/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "ng-runtime-routes:build",
-            "proxyConfig": "apps/ng-runtime-routes//proxy.conf.json"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "ng-runtime-routes:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "ng-runtime-routes:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/ng-runtime-routes/tsconfig.app.json",
-              "apps/ng-runtime-routes/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/builders:jest",
-          "options": {
-            "jestConfig": "apps/ng-runtime-routes/jest.config.js",
-            "tsConfig": "apps/ng-runtime-routes/tsconfig.spec.json",
-            "setupFile": "apps/ng-runtime-routes/src/test-setup.ts"
-          }
-        }
-      }
-    },
-    "ng-runtime-routes-e2e": {
-      "root": "apps/ng-runtime-routes-e2e",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/builders:cypress",
-          "options": {
-            "cypressConfig": "apps/ng-runtime-routes-e2e/cypress.json",
-            "tsConfig": "apps/ng-runtime-routes-e2e/tsconfig.e2e.json",
-            "devServerTarget": "ng-runtime-routes:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ng-runtime-routes:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "apps/ng-runtime-routes-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
     "api": {
       "root": "apps/api",
       "sourceRoot": "apps/api/src",
@@ -201,6 +82,121 @@
         }
       },
       "schematics": {}
+    },
+    "ex-app": {
+      "root": "apps/ex-app/",
+      "sourceRoot": "apps/ex-app/src",
+      "projectType": "application",
+      "prefix": "nge",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ex-app",
+            "index": "apps/ex-app/src/index.html",
+            "main": "apps/ex-app/src/main.ts",
+            "polyfills": "apps/ex-app/src/polyfills.ts",
+            "tsConfig": "apps/ex-app/tsconfig.app.json",
+            "assets": ["apps/ex-app/src/favicon.ico", "apps/ex-app/src/assets"],
+            "styles": ["apps/ex-app/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ex-app/src/environments/environment.ts",
+                  "with": "apps/ex-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ex-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ex-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ex-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ex-app/tsconfig.app.json",
+              "apps/ex-app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/ex-app/jest.config.js",
+            "tsConfig": "apps/ex-app/tsconfig.spec.json",
+            "setupFile": "apps/ex-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "ex-app-e2e": {
+      "root": "apps/ex-app-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/ex-app-e2e/cypress.json",
+            "tsConfig": "apps/ex-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "ex-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ex-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/ex-app-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -219,5 +215,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "ng-runtime-routes"
+  "defaultProject": ""
 }
