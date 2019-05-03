@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nge/api-interface": ["libs/api-interface/src/index.ts"]
+      "@nge/api-interface": ["libs/api-interface/src/index.ts"],
+      "@nge/todo-pages": ["libs/todo-pages/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

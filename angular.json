@@ -197,6 +197,37 @@
           }
         }
       }
+    },
+    "todo-pages": {
+      "root": "libs/todo-pages",
+      "sourceRoot": "libs/todo-pages/src",
+      "projectType": "library",
+      "prefix": "nge",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/todo-pages/tsconfig.lib.json",
+              "libs/todo-pages/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/todo-pages/jest.config.js",
+            "tsConfig": "libs/todo-pages/tsconfig.spec.json",
+            "setupFile": "libs/todo-pages/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

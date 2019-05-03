@@ -19,6 +19,9 @@
     },
     "ex-app-e2e": {
       "tags": []
+    },
+    "todo-pages": {
+      "tags": []
     }
   }
 }
